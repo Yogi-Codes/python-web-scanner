@@ -31,7 +31,6 @@ lines = data.split("\n")
 for line in lines:
     url = "https://"+line.split(",")[1]    # ["1", "netflix.com"]
     print(f"🚀 URL : {url}\n")
-    sleep(1)
     try:
         response = requests.get(url, cookies=cookies, headers=headers, timeout=5)
         soup = BeautifulSoup(response.text, 'html.parser')
